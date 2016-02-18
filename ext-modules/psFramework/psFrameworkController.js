@@ -1,23 +1,22 @@
 'use strict';
 
 angular.module('psFramework').controller('psFrameworkController',
-  ['$scope', '$window', '$timeout',
-    function($scope, $window, $timeout) {
+  ['$scope', '$rootScope', '$window', '$timeout',
+    function($scope, $rootScope, $window, $timeout) {
 
       $scope.isMenuVisible = true;
       $scope.isMenuButtonVisible = true;
 
-      $scope.menuButtonClicked = function() {
-
-      }
-
       $scope.$on('ps-menu-item-selected-event', function(evt, data) {
         $scope.routeString = data.route;
+        checkWidth();
+        broadcastMenuState();
       });
 
       $($window).on('resize.psFramework', function() {
         $scope.$apply(function() {
           checkWidth();
+          broadcastMenuState();
         });
       });
 
@@ -31,8 +30,22 @@ angular.module('psFramework').controller('psFrameworkController',
         $scope.isMenuButtonVisible = !$scope.isMenuVisible;
       };
 
+      $scope.menuButtonClicked = function() {
+        $scope.isMenuVisible = !$scope.isMenuVisible;
+        broadcastMenuState();
+        // It throws an error: $apply already in progress
+        // $scope.$apply();
+      }
+
+      var broadcastMenuState = function() {
+        $rootScope.$broadcast('ps-menu-show', {
+          show: $scope.isMenuVisible
+        });
+      };
+
       $timeout(function() {
         checkWidth();
-      });
+        broadcastMenuState();
+      }, 0);
     }
   ]);
