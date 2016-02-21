@@ -44,9 +44,19 @@ angular.module('psFramework').controller('psFrameworkController',
 
       var broadcastMenuState = function() {
         $rootScope.$broadcast('ps-menu-show', {
-          show: $scope.isMenuVisible
+          show: $scope.isMenuVisible,
+          isVertical: $scope.isMenuVertical,
+          allowHorizontalToggle: !$scope.isMenuButtonVisible
         });
       };
+
+      // $scope.menuButtonClicked = function() {
+      //   $scope.isMenuVisible = !$scope.isMenuVisible;
+      //
+      //   broadcastMenuState();
+      //
+      //   scope.$apply();
+      // };
 
       $timeout(function() {
         checkWidth();
