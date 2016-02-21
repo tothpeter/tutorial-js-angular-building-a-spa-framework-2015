@@ -14,6 +14,10 @@ angular.module('psMenu').controller('psMenuController',
         $scope.activeElement = el;
       };
 
+      this.isVertical = function() {
+        return $scope.isVertical;
+      }
+
       this.setRoute = function(route) {
         $rootScope.$broadcast('ps-menu-item-selected-event', {route: route});
       };
