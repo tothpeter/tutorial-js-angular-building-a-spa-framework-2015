@@ -19,12 +19,14 @@ angular.module('app').directive('wwaDashboard', [function() {
 
       scope.widgets = [
         {
+          title: 'First',
           sizeX: 3,
           sizeY: 3,
           row: 0,
           col: 0
         },
         {
+          title: 'Kalina.tech',
           sizeX: 2,
           sizeY: 4,
           row: 0,
