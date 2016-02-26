@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').directive('wwaTemperatureDirective',
+angular.module('app').directive('wwaTemperature',
  [
    'dataService',
    function(dataService) {
