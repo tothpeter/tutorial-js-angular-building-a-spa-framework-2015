@@ -10,6 +10,48 @@ angular.module('app').directive('wwaDashboard', [function() {
 
       scope.title = 'Sample Dashboard Title';
 
+      scope.widgetDefinitions = [
+        {
+          title: 'Temperature',
+          settings: {
+            sizeX: 3,
+            sizeY: 3,
+            minSizeX: 2,
+            minSizeY: 2,
+            template: '<wwa-temperature></wwa-temperature>',
+            widgetSettings: {
+              id: 1000
+            }
+          }
+        },
+        {
+          title: 'Inventory',
+          settings: {
+            sizeX: 5,
+            sizeY: 3,
+            minSizeX: 2,
+            minSizeY: 2,
+            template: '<wwa-inventory></wwa-inventory>',
+            widgetSettings: {
+              id: 1002
+            }
+          }
+        },
+        {
+          title: 'Employee',
+          settings: {
+            sizeX: 5,
+            sizeY: 3,
+            minSizeX: 2,
+            minSizeY: 2,
+            template: '<wwa-employee></wwa-employee>',
+            widgetSettings: {
+              id: 5000
+            }
+          }
+        }
+      ];
+
       scope.gridsterOpts = {
         columns: 12,
         margins: [20, 20],
