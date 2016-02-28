@@ -1,0 +1,27 @@
+{
+  "name": "building_a_spa_framework_2015",
+  "version": "1.0.0",
+  "description": "- ng-inspector - AngularJS Batarang ### Run HTTP server (ng-inspector does not support file:// protocol) `python -m SimpleHTTPServer`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tothpeter/tutorials-js-angular-building-a-spa-framework-2015.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tothpeter/tutorials-js-angular-building-a-spa-framework-2015/issues"
+  },
+  "homepage": "https://github.com/tothpeter/tutorials-js-angular-building-a-spa-framework-2015#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-strip-line": "0.0.1"
+  }
+}
