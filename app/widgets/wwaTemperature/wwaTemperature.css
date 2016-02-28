@@ -1,7 +1,6 @@
 .wwa-temperature-widget {
     height: 100%;
     width: 100%;
-    min-height: 180px;
     font-size: 16px;
     color: black;
 }
@@ -32,6 +31,12 @@
     min-height: 180px;
 }
 
+.wwa-temperature-body .fa-spin {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
 .wwa-temperature-view {
     background-color: rgba(255,255,255,.7);
     position: absolute;
@@ -51,4 +56,17 @@
 .wwa-temperature-degrees {
     font-size: 64px;
     margin-top: -20px;
+}
+
+.wwa-temperature-image {
+    font-size: 24px;
+    color: white;
+    background-image: url(/images/kayak-icon-flat.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    /*padding-top: 20px;*/
+    overflow: hidden;
+    /*min-height: 120px;*/
 }
