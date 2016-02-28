@@ -2,8 +2,8 @@
 
 angular.module('psDashboard').directive('psWidgetBody',
   [
-    '$compile',
-    function($compile) {
+    '$compile', '$uibModal',
+    function($compile, $uibModal) {
       return {
         templateUrl: 'ext-modules/psDashboard/psWidgetBodyTemplate.html',
         link: function(scope, element, attrs) {
@@ -17,6 +17,16 @@ angular.module('psDashboard').directive('psWidgetBody',
 
             scope.widgets.splice(itemIndex, 1);
           }
+
+          scope.settings = function() {
+            var options = {
+              templateUrl: scope.item.widgetSettings.templateUrl,
+              controller: scope.item.widgetSettings.controller,
+              scope: scope
+            };
+
+            $uibModal.open(options);
+          };
         }
       };
     }
