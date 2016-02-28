@@ -11,6 +11,12 @@ angular.module('psDashboard').directive('psWidgetBody',
           element.append(newElement);
 
           $compile(newElement)(scope);
+
+          scope.close = function() {
+            var itemIndex = scope.widgets.indexOf(scope.item);
+
+            scope.widgets.splice(itemIndex, 1);
+          }
         }
       };
     }
