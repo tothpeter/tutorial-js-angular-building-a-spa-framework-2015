@@ -27,6 +27,12 @@ angular.module('psDashboard').directive('psWidgetBody',
 
             $uibModal.open(options);
           };
+
+          scope.iconClicked = function() {
+            // emopty body
+            // this function is used by ng-click in the templateUrl
+            // so that icon clicks aren't intercepted by widgets
+          };
         }
       };
     }
